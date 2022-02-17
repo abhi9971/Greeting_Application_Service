@@ -2,18 +2,29 @@ package com.bridgelabz.GreetingApplication.model;
 
 public class UserModel {
 
-    private String fname;
+    private String firstName;
+    private String lastName;
 
-    public String getFname() {
-        return fname;
+public UserModel(){}
+public UserModel(String firstName,String lastName){
+    super();
+    this.firstName=firstName;
+    this.lastName=lastName;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public UserModel(String fname) {
-        super();
-        this.fname = fname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    public String getLastName(){
+        return  lastName;
+    }
+    public String getFirstName(){
+        return firstName;
     }
 }
+
+
