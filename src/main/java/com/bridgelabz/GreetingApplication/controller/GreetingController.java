@@ -12,7 +12,8 @@ public class GreetingController {
     GreetingAppService service;
     @GetMapping("/greeting")
     public String greeting(@RequestParam(value = "name",defaultValue = "world") String name) {
-        return "Hello..!!! " + name;
+       String greeting= service.sayGreeting();
+        return greeting;
     }
 
     @PostMapping("/post/{name}")
