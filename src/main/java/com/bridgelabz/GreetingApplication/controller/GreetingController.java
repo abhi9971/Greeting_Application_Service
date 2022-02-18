@@ -9,16 +9,20 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/start")
 public class GreetingController {
+
     @Autowired
     GreetingAppService service;
+
+
     @GetMapping("/greeting")
-    public String greeting(@RequestParam(value = "name",defaultValue = "world") String name) {
-        String greeting= service.sayGreeting(name);
+    public String greeting(@RequestParam(value = "userPassedName",defaultValue = "world") String userPassedName) {
+        String greeting = service.sayGreeting(userPassedName);
         return greeting;
     }
 
     @PostMapping("/post")
     public String greeting1(@RequestBody UserModel user) {
+        service.getGreeting(user);
         return 	service.sayGreeting(user);
     }
 }
